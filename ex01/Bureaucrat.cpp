@@ -8,6 +8,7 @@ Bureaucrat::Bureaucrat(): _name("default name"), _grade(150)
 Bureaucrat::Bureaucrat(std::string name, int grade): _name(name)
 {
     std::cout << "Bureaucrat: Constractor called (name: " << name << ", grade: " << grade << ")" << std::endl;
+
     if (grade > 150) {
         throw Bureaucrat::GradeTooLowException();
     } else if (grade < 1) {
@@ -77,11 +78,6 @@ void Bureaucrat::decrementGrade(void)
     }
 }
 
-std::ostream &operator<<(std::ostream &os, const Bureaucrat &src)
-{
-    return os << src.getName() << ", bureaucrat grade " << src.getGrade();
-}
-
 void Bureaucrat::setGrade(int grade)
 {
     if (grade > 150) {
@@ -93,6 +89,18 @@ void Bureaucrat::setGrade(int grade)
     }
 }
 
+void Bureaucrat::signForm(Form &form) const
+{
+    try {
+        form.beSigned(*this);
+        std::cout << getName() << " signed " << form.get_name() << std::endl;
+    } catch (std::exception &e) {
+        std::cout << getName() << " couldn’t sign " << form.get_name() << " because " << e.what() << std::endl;
+    }
+}
+
+
+
 const char *Bureaucrat::GradeTooHighException::what() const throw()
 {
     return "Grade is too high";
@@ -103,3 +111,7 @@ const char *Bureaucrat::GradeTooLowException::what() const throw()
     return "Grade is too low";
 }
 
+std::ostream &operator<<(std::ostream &os, const Bureaucrat &src)
+{
+    return os << src.getName() << ", bureaucrat grade " << src.getGrade();
+}
