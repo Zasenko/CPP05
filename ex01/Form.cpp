@@ -7,7 +7,6 @@ _grade_to_sign(150),
 _grade_to_execute(150)
 {
     std::cout << "Form: Default constractor called" << std::endl;
-
 }
 
 Form::Form(std::string name, int grade_to_sign, int grade_to_execute):
@@ -17,6 +16,12 @@ _grade_to_sign(grade_to_sign),
 _grade_to_execute(grade_to_execute)
 {
     std::cout << "Form: Constractor called (name: " << name << ", grade to sign: " << grade_to_sign << ", grade to execute: " << grade_to_execute << ")" << std::endl;
+    
+    if (grade_to_sign > 150 || grade_to_execute > 150) {
+        throw Bureaucrat::GradeTooLowException();
+    } else if (grade_to_sign < 1 || grade_to_execute < 1) {
+        throw Bureaucrat::GradeTooHighException();
+    }
 }
 
 Form::~Form()
