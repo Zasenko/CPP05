@@ -1,4 +1,4 @@
-NAME = ex02
+NAME = ex03
 
 C++ = c++
 C++FLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
@@ -7,7 +7,8 @@ SRC = main.cpp\
 	AForm.cpp\
 	ShrubberyCreationForm.cpp\
 	RobotomyRequestForm.cpp\
-	PresidentialPardonForm.cpp
+	PresidentialPardonForm.cpp\
+	Intern.cpp
 
 OBJ = $(SRC:.cpp=.o)
 D = $(OBJ:.o=.d)
