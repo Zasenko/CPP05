@@ -1,7 +1,7 @@
 NAME = ex00
 
 C++ = c++
-C++FLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
+C++FLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -pedantic
 SRC = main.cpp Bureaucrat.cpp
 
 OBJ = $(SRC:.cpp=.o)
