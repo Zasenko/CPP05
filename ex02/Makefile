@@ -1,7 +1,7 @@
 NAME = ex02
 
 C++ = c++
-C++FLAGS = -Wall -Wextra -Werror -std=c++98 -MMD
+C++FLAGS = -Wall -Wextra -Werror -std=c++98 -MMD -pedantic
 SRC = main.cpp\
 	Bureaucrat.cpp\
 	AForm.cpp\
@@ -29,4 +29,4 @@ re: fclean all
 
 -include $(D)
 
-PHONY: all clean fclean re
+.PHONY: all clean fclean re

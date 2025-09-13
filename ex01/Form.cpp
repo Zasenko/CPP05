@@ -1,7 +1,7 @@
 #include "Form.hpp"
 
 Form::Form():
-_name(),
+_name("default"),
 _is_signed(false),
 _grade_to_sign(150),
 _grade_to_execute(150)
@@ -48,7 +48,7 @@ Form &Form::operator=(const Form &src)
     return *this;
 }
 
-const std::string Form::get_name() const
+std::string Form::get_name() const
 {
     return _name;
 }
@@ -58,22 +58,26 @@ bool Form::get_is_signed() const
     return _is_signed;
 }
 
-const int Form::get_grade_to_sign() const
+int Form::get_grade_to_sign() const
 {
     return _grade_to_sign;
 }
 
-const int Form::get_grade_to_execute() const
+int Form::get_grade_to_execute() const
 {
     return _grade_to_execute;
 }
 
 void Form::beSigned(const Bureaucrat &b)
 {
-    if (b.getGrade() <= get_grade_to_sign()) {
-        _is_signed = true;
-    } else if (b.getGrade() > get_grade_to_sign()) {
-        throw Form::GradeTooLowException();
+    if (_is_signed) {
+        std::cout << "Form " << _name << " is already signed." << std::endl;
+    } else {
+        if (b.getGrade() <= get_grade_to_sign()) {
+            _is_signed = true;
+        } else if (b.getGrade() > get_grade_to_sign()) {
+            throw Form::GradeTooLowException();
+        }
     }
 }
 

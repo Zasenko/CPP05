@@ -24,4 +24,4 @@ re: fclean all
 
 -include $(D)
 
-PHONY: all clean fclean re
+.PHONY: all clean fclean re

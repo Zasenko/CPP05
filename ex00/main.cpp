@@ -32,7 +32,7 @@ void test1() {
 void test2() {
     std::cout << "-------------- Test 2 --------------"<< std::endl;
     try {
-        Bureaucrat b("Dima", -5);
+        Bureaucrat b("Ben", -5);
         std::cout << b << std::endl;
     } catch(const Bureaucrat::GradeTooHighException &e) {
         std::cerr << "Error: " << e.what() << std::endl;
@@ -46,7 +46,7 @@ void test2() {
 void test3() {
     std::cout << "-------------- Test 3 --------------"<< std::endl;
     try {
-        Bureaucrat b("Dima", 180);
+        Bureaucrat b("Kate", 180);
         std::cout << b << std::endl;
     } catch(const Bureaucrat::GradeTooHighException &e) {
         std::cerr << "Error: " << e.what() << std::endl;
@@ -57,11 +57,10 @@ void test3() {
     }
 }
 
-
 void test4() {
     std::cout << "-------------- Test 4 --------------"<< std::endl;
     try {
-        Bureaucrat b("Dima", 5);
+        Bureaucrat b("Sara", 5);
         std::cout << b << std::endl;
 
         for (int i = 0; i < 100; i++) {
@@ -80,7 +79,7 @@ void test4() {
 void test5() {
     std::cout << "-------------- Test 5 --------------"<< std::endl;
     try {
-        Bureaucrat b("Dima", 140);
+        Bureaucrat b("Norbert", 140);
         std::cout << b << std::endl;
 
         for (int i = 0; i < 100; i++) {
