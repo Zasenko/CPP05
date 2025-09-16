@@ -71,7 +71,7 @@ void Bureaucrat::setGrade(int grade)
 void Bureaucrat::signForm(Form &form) const
 {
     if (form.get_is_signed()) {
-        std::cout << "Form " << _name << " is already signed." << std::endl;
+        std::cout << "Form " << form.get_name() << " is already signed." << std::endl;
     } else {
         try {
             form.beSigned(*this);

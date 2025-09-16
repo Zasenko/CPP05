@@ -16,7 +16,7 @@ int main(void) {
 }
 
 void test1() {
-    std::cout << "-------------- Test 1 --------------"<< std::endl;
+    std::cout << "-------------- Test 1: Constructor (Success) --------------"<< std::endl;
     try {
         Bureaucrat b("Dima", 1);
         std::cout << b << std::endl;
@@ -30,7 +30,7 @@ void test1() {
 }
 
 void test2() {
-    std::cout << "-------------- Test 2 --------------"<< std::endl;
+    std::cout << "-------------- Test 2: Constructor (Failure) --------------"<< std::endl;
     try {
         Bureaucrat b("Ben", -5);
         std::cout << b << std::endl;
@@ -44,7 +44,7 @@ void test2() {
 }
 
 void test3() {
-    std::cout << "-------------- Test 3 --------------"<< std::endl;
+    std::cout << "-------------- Test 3: Constructor (Failure)  --------------"<< std::endl;
     try {
         Bureaucrat b("Kate", 180);
         std::cout << b << std::endl;
@@ -58,7 +58,7 @@ void test3() {
 }
 
 void test4() {
-    std::cout << "-------------- Test 4 --------------"<< std::endl;
+    std::cout << "-------------- Test 4: increment Grade --------------"<< std::endl;
     try {
         Bureaucrat b("Sara", 5);
         std::cout << b << std::endl;
@@ -77,7 +77,7 @@ void test4() {
 }
 
 void test5() {
-    std::cout << "-------------- Test 5 --------------"<< std::endl;
+    std::cout << "-------------- Test 5: decrement Grade --------------"<< std::endl;
     try {
         Bureaucrat b("Norbert", 140);
         std::cout << b << std::endl;

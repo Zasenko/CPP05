@@ -19,58 +19,61 @@ int main() {
 }
 
 void test1() {
-    std::cout << "-------------- Test 1: Constructor Validation --------------" << std::endl;
+    std::cout << "-------------- Test 1: Constructor --------------" << std::endl;
 
+    std::cout << "----- 1.1 ShrubberyCreationForm -----" << std::endl;
     try {
-        ShrubberyCreationForm f1("Home");
-        std::cout << f1 << std::endl;
+        ShrubberyCreationForm f("Shrubbery");
+        std::cout << f << std::endl;
     } catch (std::exception &e) {
-        std::cerr << "ShrubberyCreationForm Error: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
     }
-
+    std::cout << "----- 1.2 RobotomyRequestForm -----" << std::endl;
     try {
-        RobotomyRequestForm f2("Bender");
-        std::cout << f2 << std::endl;
+        RobotomyRequestForm f("Robot");
+        std::cout << f << std::endl;
     } catch (std::exception &e) {
-        std::cerr << "RobotomyRequestForm Error: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
     }
-
+    std::cout << "----- 1.3 PresidentialPardonForm -----" << std::endl;
     try {
-        PresidentialPardonForm f3("Alice");
-        std::cout << f3 << std::endl;
+        PresidentialPardonForm f("President");
+        std::cout << f << std::endl;
     } catch (std::exception &e) {
-        std::cerr << "PresidentialPardonForm Error: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 }
 
 void test2() {
-    std::cout << "-------------- Test 2: Signing Forms --------------" << std::endl;
-
+    std::cout << "-------------- Test 2: Signing (Success) --------------" << std::endl;
+    std::cout << "----- 2.1 ShrubberyCreationForm -----" << std::endl;
     try {
-        Bureaucrat bob("Bob", 50);
-        ShrubberyCreationForm f("Garden");
+        Bureaucrat b("Bob", 1);
+        ShrubberyCreationForm f("Shrubbery");
         std::cout << f << std::endl;
-        bob.signForm(f);
+        b.signForm(f);
         std::cout << f << std::endl;
     } catch (std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }
 
+    std::cout << "----- 2.2 RobotomyRequestForm -----" << std::endl;
     try {
-        Bureaucrat alice("oliver", 150);
+        Bureaucrat b("Oliver", 1);
         RobotomyRequestForm f("Robot");
         std::cout << f << std::endl;
-        alice.signForm(f);  // Should fail (too low)
+        b.signForm(f);  // Should fail (too low)
         std::cout << f << std::endl;
     } catch (std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }
 
+    std::cout << "----- 2.3 PresidentialPardonForm -----" << std::endl;
     try {
-        Bureaucrat alice("Nick", 150);
-        PresidentialPardonForm f("Presiden");
+        Bureaucrat b("Nick", 1);
+        PresidentialPardonForm f("President");
         std::cout << f << std::endl;
-        alice.signForm(f);  // Should fail (too low)
+        b.signForm(f);  // Should fail (too low)
         std::cout << f << std::endl;
     } catch (std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
@@ -78,71 +81,111 @@ void test2() {
 }
 
 void test3() {
-    std::cout << "-------------- Test 3: Execute Forms (Success) --------------" << std::endl;
+    std::cout << "-------------- Test 3: Signing (Failure) --------------" << std::endl;
 
+    std::cout << "----- 3.1 ShrubberyCreationForm -----" << std::endl;
     try {
-        Bureaucrat exec("Exec", 1);
-
-        ShrubberyCreationForm shrub("Park");
-        shrub.beSigned(exec);
-        shrub.execute(exec);  // Should create file
-
-        RobotomyRequestForm robo("Robo");
-        robo.beSigned(exec);
-        robo.execute(exec);  // Should print drilling noise + result
-
-        PresidentialPardonForm pardon("Pardoned");
-        pardon.beSigned(exec);
-        pardon.execute(exec);  // Should print pardon message
-
+        Bureaucrat b("Bob", 150);
+        ShrubberyCreationForm f("Shrubbery");
+        std::cout << f << std::endl;
+        b.signForm(f);
+        std::cout << f << std::endl;
     } catch (std::exception &e) {
-        std::cerr << "Execution Error: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    std::cout << "----- 3.2 RobotomyRequestForm -----" << std::endl;
+    try {
+        Bureaucrat b("Oliver", 150);
+        RobotomyRequestForm f("Robot");
+        std::cout << f << std::endl;
+        b.signForm(f);
+        std::cout << f << std::endl;
+    } catch (std::exception &e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
+
+    std::cout << "----- 3.3 PresidentialPardonForm -----" << std::endl;
+    try {
+        Bureaucrat b("Nick", 150);
+        PresidentialPardonForm f("President");
+        std::cout << f << std::endl;
+        b.signForm(f);
+        std::cout << f << std::endl;
+    } catch (std::exception &e) {
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 }
 
 void test4() {
-    std::cout << "-------------- Test 4: Execute Forms (Fail - grade too low) --------------" << std::endl;
+    std::cout << "-------------- Test 4: Execute Forms (Success) --------------" << std::endl;
 
+    std::cout << "----- 4.1 ShrubberyCreationForm -----" << std::endl;
     try {
-        Bureaucrat low("Olga", 150);
-        ShrubberyCreationForm shrub("FailPark");
-        shrub.beSigned(low);  // Should throw or fail here if grade too low
-        shrub.execute(low);  // Should fail (low grade)
+        Bureaucrat b("Bob", 1);
+        ShrubberyCreationForm f("Shrubbery");
+        b.signForm(f);
+        std::cout << f << std::endl;
+        b.executeForm(f);
     } catch (std::exception &e) {
-        std::cerr << "Execution Error: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 
+    std::cout << "----- 4.2 RobotomyRequestForm -----" << std::endl;
     try {
-        Bureaucrat mid("Bob", 150);
-        RobotomyRequestForm robo("FailRobo");
-        robo.beSigned(mid);  // maybe success
-        robo.execute(mid);  // Should fail due to exec grade (usually 45 or lower required)
+        Bureaucrat b("Bob", 1);
+        RobotomyRequestForm f("Robo");
+        b.signForm(f);
+        std::cout << f << std::endl;
+        b.executeForm(f);
     } catch (std::exception &e) {
-        std::cerr << "Execution Error: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 
+    std::cout << "----- 4.3 PresidentialPardonForm -----" << std::endl;
     try {
-        Bureaucrat mid("Dima", 150);
-        PresidentialPardonForm robo("FailRobo");
-        robo.beSigned(mid);  // maybe success
-        robo.execute(mid);  // Should fail due to exec grade (usually 45 or lower required)
+        Bureaucrat b("Bob", 1);
+        PresidentialPardonForm f("President");
+        b.signForm(f);
+        std::cout << f << std::endl;
+        b.executeForm(f);
     } catch (std::exception &e) {
-        std::cerr << "Execution Error: " << e.what() << std::endl;
+        std::cerr << "Error: " << e.what() << std::endl;
     }
 }
 
 void test5() {
-    std::cout << "-------------- Test 5: Re-sign and Re-execute --------------" << std::endl;
+    std::cout << "-------------- Test 5: Execute Forms (Failure) --------------" << std::endl;
 
+    std::cout << "----- 5.1 ShrubberyCreationForm -----" << std::endl;
     try {
-        Bureaucrat john("John", 1);
-        PresidentialPardonForm form("John");
+        Bureaucrat b("Bob", 140);
+        ShrubberyCreationForm f("Shrubbery");
+        b.signForm(f);
+        std::cout << f << std::endl;
+        b.executeForm(f);
+    } catch (std::exception &e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
 
-        john.signForm(form);
-        john.signForm(form);  // Signing twice (should handle gracefully)
+    std::cout << "----- 5.2 RobotomyRequestForm -----" << std::endl;
+    try {
+        Bureaucrat b("Bob", 70);
+        RobotomyRequestForm f("Robo");
+        b.signForm(f);
+        std::cout << f << std::endl;
+        b.executeForm(f);
+    } catch (std::exception &e) {
+        std::cerr << "Error: " << e.what() << std::endl;
+    }
 
-        form.execute(john);
-        form.execute(john);   // Executing twice (should work, no state change expected)
+    std::cout << "----- 5.3 PresidentialPardonForm -----" << std::endl;
+    try {
+        Bureaucrat b("Bob", 20);
+        PresidentialPardonForm f("President");
+        b.signForm(f);
+        std::cout << f << std::endl;
+        b.executeForm(f);
     } catch (std::exception &e) {
         std::cerr << "Error: " << e.what() << std::endl;
     }
