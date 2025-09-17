@@ -28,10 +28,7 @@ AForm *Intern::makeForm(std::string name, std::string target)
     std::string forms[3] = {"robotomy request", "shrubbery creation", "presidential pardon"};
     int lev = -1;
     for (int i = 0; i < 3 && lev == -1; i++) {
-        if (name == forms[i]) {
-            lev = i;
-            break;
-        }
+        name == forms[i] ? lev = i : lev = -1;
     }
     AForm *form = NULL;
     switch (lev) {
@@ -56,4 +53,3 @@ AForm *Intern::makeForm(std::string name, std::string target)
 const char *Intern::FormNotFoundException::what() const throw() {
     return "Form not found";
 }
-
