@@ -25,12 +25,7 @@ Bureaucrat::~Bureaucrat()
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy): _name(copy.getName()) {
     std::cout << "Bureaucrat: Copy constractor called" << std::endl;
-    try {
-        setGrade(copy.getGrade());
-    }
-    catch (std::exception &e) {
-        throw e;
-    }
+    setGrade(copy.getGrade());
 }
 
 Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
@@ -38,12 +33,7 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &src)
     std::cout << "Bureaucrat: Assignment operator called" << std::endl;
     
     if (this != &src) {
-        try {
-            setGrade(src.getGrade());
-        }
-        catch (std::exception &e) {
-            throw e;
-        }
+        setGrade(src.getGrade());
     }
     return *this;
 }

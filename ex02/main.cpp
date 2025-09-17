@@ -3,11 +3,11 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-void test1();  // Constructor tests (valid/invalid)
-void test2();  // Signing tests
-void test3();  // Execution tests (success)
-void test4();  // Execution tests (fail due to grade)
-void test5();  // Re-execution or double sign tests
+void test1(); 
+void test2(); 
+void test3();
+void test4();
+void test5();
 
 int main() {
     test1();

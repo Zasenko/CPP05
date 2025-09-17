@@ -48,8 +48,12 @@ AForm *Intern::makeForm(std::string name, std::string target)
             std::cout << "Intern creates Presidential Pardon form" << std::endl;
             break;
         default:
-            std::cout << "Form " << name << " not found" << std::endl;
-            break;
+            throw FormNotFoundException();
     }
     return form;
 }
+
+const char *Intern::FormNotFoundException::what() const throw() {
+    return "Form not found";
+}
+

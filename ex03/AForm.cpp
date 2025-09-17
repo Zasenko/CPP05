@@ -70,10 +70,14 @@ int AForm::get_grade_to_execute() const
 
 void AForm::beSigned(const Bureaucrat &b)
 {
-    if (b.getGrade() <= get_grade_to_sign()) {
-        _is_signed = true;
-    } else if (b.getGrade() > get_grade_to_sign()) {
-        throw AForm::GradeTooLowException();
+    if (_is_signed) {
+        std::cout << "Form " << _name << " is already signed." << std::endl;
+    } else {
+        if (b.getGrade() <= get_grade_to_sign()) {
+            _is_signed= true;
+        } else if (b.getGrade() > get_grade_to_sign()) {
+            throw AForm::GradeTooLowException();
+        }
     }
 }
 
