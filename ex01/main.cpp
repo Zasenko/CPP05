@@ -14,7 +14,7 @@ int main(void) {
 }
 
 void test1() {
-    std::cout << "-------------- Test 1: Constructor (Failure) --------------"<< std::endl;
+    std::cout << "-------------- Test 1: Constructor (Failure) --------------\n"<< std::endl;
     std::cout << "---- 1.1 -----"<< std::endl;
 
     try {
@@ -53,7 +53,7 @@ void test1() {
 }
 
 void test2() {
-    std::cout << "-------------- Test 2: sign Form  --------------"<< std::endl;
+    std::cout << "\n-------------- Test 2: sign Form  --------------\n"<< std::endl;
     try {
         Bureaucrat b("Kate", 30);
         Form f("ImportantForm", 50, 20);
@@ -66,7 +66,7 @@ void test2() {
 }
 
 void test3() {
-    std::cout << "-------------- Test 3: signForm failure --------------"<< std::endl;
+    std::cout << "\n-------------- Test 3: signForm failure --------------\n"<< std::endl;
     try {
         Bureaucrat b("Olaf", 100);
         Form f("VeryImportantForm", 50, 20);
@@ -79,7 +79,7 @@ void test3() {
 }
 
 void test4() {
-    std::cout << "-------------- Test 4: signForm 2 times  --------------"<< std::endl;
+    std::cout << "\n-------------- Test 4: signForm 2 times  --------------\n"<< std::endl;
     try {
         Bureaucrat b("Olaf", 20);
         Form f("VeryImportantForm", 50, 20);

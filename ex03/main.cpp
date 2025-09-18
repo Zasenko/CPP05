@@ -18,7 +18,7 @@ int main(void) {
 }
 
 void test1() {
-    std::cout << "-------------- Test 1: robotomy request form (Success) --------------" << std::endl;
+    std::cout << "-------------- Test 1: robotomy request form (Success) --------------\n" << std::endl;
     try {
         Intern i;
         AForm* f;
@@ -35,7 +35,7 @@ void test1() {
 }
 
 void test2() {
-    std::cout << "-------------- Test 2: shrubbery creation form (Success) --------------" << std::endl;
+    std::cout << "\n-------------- Test 2: shrubbery creation form (Success) --------------\n" << std::endl;
     try {
         Intern i;
         AForm* f;
@@ -52,7 +52,7 @@ void test2() {
 }
 
 void test3() {
-    std::cout << "-------------- Test 2: presidential pardon form (Success) --------------" << std::endl;
+    std::cout << "\n-------------- Test 2: presidential pardon form (Success) --------------\n" << std::endl;
     try {
         Intern i;
         AForm* f;
@@ -69,7 +69,7 @@ void test3() {
 }
 
 void test4() {
-    std::cout << "-------------- Test 4: (failure - form not found) --------------" << std::endl;
+    std::cout << "\n-------------- Test 4: (failure - form not found) --------------\n" << std::endl;
     try {
         Intern i;
         AForm* f;

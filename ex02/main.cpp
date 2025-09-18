@@ -19,7 +19,7 @@ int main() {
 }
 
 void test1() {
-    std::cout << "-------------- Test 1: Constructor --------------" << std::endl;
+    std::cout << "-------------- Test 1: Constructor --------------\n" << std::endl;
 
     std::cout << "----- 1.1 ShrubberyCreationForm -----" << std::endl;
     try {
@@ -45,7 +45,7 @@ void test1() {
 }
 
 void test2() {
-    std::cout << "-------------- Test 2: Signing (Success) --------------" << std::endl;
+    std::cout << "\n-------------- Test 2: Signing (Success) --------------\n" << std::endl;
     std::cout << "----- 2.1 ShrubberyCreationForm -----" << std::endl;
     try {
         Bureaucrat b("Bob", 1);
@@ -81,7 +81,7 @@ void test2() {
 }
 
 void test3() {
-    std::cout << "-------------- Test 3: Signing (Failure) --------------" << std::endl;
+    std::cout << "\n-------------- Test 3: Signing (Failure) --------------\n" << std::endl;
 
     std::cout << "----- 3.1 ShrubberyCreationForm -----" << std::endl;
     try {
@@ -118,7 +118,7 @@ void test3() {
 }
 
 void test4() {
-    std::cout << "-------------- Test 4: Execute Forms (Success) --------------" << std::endl;
+    std::cout << "\n-------------- Test 4: Execute Forms (Success) --------------\n" << std::endl;
 
     std::cout << "----- 4.1 ShrubberyCreationForm -----" << std::endl;
     try {
@@ -155,7 +155,7 @@ void test4() {
 }
 
 void test5() {
-    std::cout << "-------------- Test 5: Execute Forms (Failure) --------------" << std::endl;
+    std::cout << "\n-------------- Test 5: Execute Forms (Failure) --------------\n" << std::endl;
 
     std::cout << "----- 5.1 ShrubberyCreationForm -----" << std::endl;
     try {
